@@ -1,1 +1,26 @@
+{
+  "name": "Student Management System Dev Container",
+
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "redhat.java",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+
+  "forwardPorts": [3000, 8080],
+
+  "postCreateCommand": "cd backend && mvn clean install && cd ../frontend && npm install",
+
+  "remoteUser": "vscode"
+}
 
