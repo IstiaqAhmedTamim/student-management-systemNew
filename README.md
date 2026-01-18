@@ -419,10 +419,4 @@ Each class has one well-defined purpose:
 
 ---
 
-## 📄 License
 
-This project is for educational purposes.
-
----
-
-**Happy Coding! 🚀**
