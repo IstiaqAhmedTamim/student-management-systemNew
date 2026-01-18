@@ -17,4 +17,6 @@ public interface StudentService {
     Student partialUpdateStudent(Long id, Student student);
 
     void deleteStudent(Long id);
+
+    List<Student> searchStudents(String keyword);
 }

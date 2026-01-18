@@ -23,6 +23,12 @@ public class StudentController {
         return service.getAllStudents();
     }
 
+    // GET search students by name or email
+    @GetMapping("/search")
+    public List<Student> searchStudents(@RequestParam String keyword) {
+        return service.searchStudents(keyword);
+    }
+
     // GET student by ID
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable Long id) {

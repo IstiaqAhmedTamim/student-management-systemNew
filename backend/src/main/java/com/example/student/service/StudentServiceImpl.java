@@ -66,4 +66,12 @@ public class StudentServiceImpl implements StudentService {
     public void deleteStudent(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public List<Student> searchStudents(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return repository.findAll();
+        }
+        return repository.searchByNameOrEmail(keyword.trim());
+    }
 }

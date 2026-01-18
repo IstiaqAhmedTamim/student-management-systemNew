@@ -1,13 +1,16 @@
 import axios from "axios";
 import { Student } from "../models/Student";
 
-const API_URL = "http://localhost:8080/api/students";
+const API_URL = "/api/students";
 
 export const getAllStudents = () =>
   axios.get<Student[]>(API_URL);
 
 export const getStudentById = (id: number) =>
   axios.get<Student>(`${API_URL}/${id}`);
+
+export const searchStudents = (keyword: string) =>
+  axios.get<Student[]>(`${API_URL}/search`, { params: { keyword } });
 
 export const createStudent = (student: Student) =>
   axios.post<Student>(API_URL, student);
